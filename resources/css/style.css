@@ -8,11 +8,14 @@ html {
 
 
 /* Nav */
-
+header {
+    background-color: rgb(221, 221, 221, 0.2);
+    
+}
 nav #navbarNav {
     display: flex;
     justify-content: center;
-    margin: 10px;
+    padding: 10px;
 }
 
 nav a.nav-link {
@@ -67,6 +70,137 @@ nav a.nav-link:hover{
         grid-template: 1fr 1fr 1fr/1fr;
     }
 }
+
+/* 3d button */
+.pushable {
+    position: relative;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+  .shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: hsl(0deg 0% 0% / 0.25);
+    transform: translateY(2px);
+  }
+  .edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: rgb(97, 97, 97);
+  }
+  .front {
+    display: block;
+    position: relative;
+    padding: 12px 42px;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    color: rgb(0, 0, 0);
+    background: rgb(184, 184, 184);
+    transform: translateY(-4px);
+  }
+  
+  .pushable:hover .front {
+    transform: translateY(-6px);
+  }
+  .pushable:hover .shadow {
+    transform: translateY(4px);
+  }
+  .pushable:active .front {
+    transform: translateY(-2px);
+  }
+  .pushable:active .shadow {
+    transform: translateY(1px);
+  }
+  
+  .pushable:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+
+/* about page */
+.pic-profile img{
+    height: 580px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+.profile{
+    display: flex;
+    font-family: Roboto, sans-serif;
+}
+
+.info-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: auto;
+    
+}
+
+.info-profile #name-profile{
+    margin: 10px 10px 0px 10px;
+    padding: 10px 10px 0px 10px;
+}
+
+.info-profile #name-profile h3{
+    font-weight: 550;
+    font-size: 1.9em;
+}
+
+.info-container h5.title-info{
+    border-bottom: 1.3px solid black;
+    padding-bottom: 5px;
+    font-weight: 550;
+    text-transform: uppercase;
+    font-size: 1.3em;
+}
+
+.casa-info{
+    display: grid;
+    grid-template: 1fr 1fr/1fr 1fr;
+    gap: 20px;
+}
+.info-container .info{
+    font-size: 16px;
+}
+
+.info-container .about .info p{
+    margin-bottom: 9px;
+}
+
+
+.casa-info .casa-item {
+    padding: 10px;
+    border: 1.5px solid rgb(221, 221, 221) ;
+    border-radius: 15px;
+    background-color: rgb(221, 221, 221, 0.2)
+}
+
+.casa-info .casa-item:hover {
+    padding: 10px;
+    border: 1.5px solid rgb(221, 221, 221) ;
+    border-radius: 15px;
+    background-color: rgb(221, 221, 221, 0.7);
+    transform: translate(-1px, -5px);
+}
+.casa-info .casa-item h6{
+    font-weight: 550;
+    font-size: 1.2em;
+    margin-bottom: 0px;
+}
+
+.casa-info .casa-item p{
+    margin-bottom: 5px;
+}
+
 /* Footer */
 
 footer{
