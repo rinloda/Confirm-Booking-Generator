@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="./resources/css/style.css">
+        <link href="./bootstrap-5.1.3-dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">TanNguyen</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" href="confirm.html">About</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+            <main class="banner"></main>
+        </header>
+        <main class="body-wrapper">
+            <section>
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active" id="viet-tab" data-bs-toggle="tab" data-bs-target="#viet" type="button" role="tab" aria-controls="viet" aria-selected="true">Vietnamese</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="eng-tab" data-bs-toggle="tab" data-bs-target="#eng" type="button" role="tab" aria-controls="eng" aria-selected="false">English</button>
+                    </li> 
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="viet" role="tabpanel" aria-labelledby="viet-tab">
+                        <h2>Confirm Booking Generator</h2>
+                        <hr>
+                        <section id="main">
+                            <form action="confirm.html" method="GET">
+                            
+                                <select id="villa" name="villa" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" required>
+                                    <option selected>Villa</option>
+                                    <option value="Casa de Tan 1 - B45 Phú Gia Compound (144 Ông Ích Khiêm, Hải Châu, Đà Nẵng)">Casa de Tan 1</option>
+                                    <option value="Casa de Tan 2 - B16 Phú Gia Compound (144 Ông Ích Khiêm, Hải Châu, Đà Nẵng)">Casa de Tan 2</option>
+                                    <option value="Casa de Tan 3 - 93 Nguyễn Đức An, Sơn Trà, Đà Nẵng">Casa de Tan 3</option>
+                                </select>
+    
+                                <!-- GUEST INFO -->
+                                <div class="form-floating ">
+                                    <input type="text" class="form-control" id="guestname" name="guestname" placeholder="Tan Nguyen" minlength="3" maxlength="200" required>
+                                    <label for="floatingInput">Họ và Tên</label>
+                                </div>
+    
+                                <div class="form-floating">
+                                    <input type="number" class="form-control" id="phonenumber" name="phonenumber" placeholder="0905618178" required>
+                                    <label for="floatingPhone">Số điện thoại</label>
+                                </div>
+    
+                                <div class="form-floating">
+                                    <input type="number" class="form-control" id="guestnumber" name="guestnumber" placeholder="10">
+                                    <label for="floatingPhone">Số lượng người</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input type="number" class="form-control" id="nightnumber" name="nightnumber" placeholder="2">
+                                    <label for="floatingPhone">Số lượng đêm</label>
+                                </div>
+                                
+                                <!-- CHECK IN / CHECK OUT DATE -->
+                                <div class="form-floating">
+                                    <input type="date" class="form-control" id="checkindate" name="checkindate" placeholder="13/06/2022" required>
+                                    <label for="floatingPhone">Ngày check-in</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input type="date" class="form-control" id="checkoutdate" name="checkoutdate" placeholder="dd-mm-yyyy" required>
+                                    <label for="floatingPhone">Ngày check-out</label>
+                                </div>
+                                
+                                <!-- PAYMENT -->
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Tổng tiền (VND)</span>
+                                    <input type="text" class="form-control" id="totalpay" name="totalpay" placeholder="Ví dụ: 5.000.000 VND" aria-label="Amount (to the nearest dollar)" required>
+                                </div>
+                                
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Đã cọc</span>
+                                    <input type="text" class="form-control" id="deposit" name="deposit" placeholder="Ví dụ: 1.000.000 VND" aria-label="Amount (to the nearest dollar)" required>
+                                    
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Còn lại</span>
+                                    <input type="text" class="form-control" id="remainpayment" name="remainpayment" placeholder="Ví dụ: 4.000.000 VND" aria-label="Amount (to the nearest dollar)" required>
+                                </div>
+    
+                                <!-- EXTRA INFO -->
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="bbq" id="bbq" name="bbq">
+                                    <label class="form-check-label" for="bbq">
+                                    BBQ
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="extrabed" id="extrabed" name="extrabed">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                    Giường phụ
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="carorder" id="carorder" name="carorder">
+                                    <label class="form-check-label" for="carorder">
+                                    Đặt xe
+                                    </label>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-text">Ghi chú</span>
+                                    <textarea class="form-control" aria-label="With textarea" id="note" name="note"></textarea>
+                                </div>
+    
+    
+                                <br>
+                                <div class="col-12">
+                                    <button class="btn btn-primary" type="submit">Submit form</button>
+                                </div>
+                            </form> 
+                        </section>
+                        
+                        
+                    </div>
+                    <div class="tab-pane fade" id="eng" role="tabpanel" aria-labelledby="eng-tab">...</div>
+                    
+                </div>
+            </section>
+        </main>
+
+
+        <footer></footer>
+    </body>
+</html>
